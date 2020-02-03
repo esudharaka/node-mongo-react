@@ -36,31 +36,8 @@ app.get('/userImages', async  (req, res) => {
 
 app.get('/images', async (req, res) => {
 
-  /*  // UserImages.find
-    await UserImages
-        .findOne({ userName :"esudharaka" })
-        .then((result) => {
-            if (result) {
-                console.log(`Successfully found document: ${result}.`);
-            } else {
-                console.log('No document matches the provided query.');
-            }
-        })
-        .catch((err) => console.error(`Failed to find document: ${err}`));*/
-        // .exec(function (err, imageSelections) {
-        //     if (err) {
-        //         console.log(err);
-        //     }
-        //     imageSelections.map((selection) => {
-        //         console.log(JSON.stringify(selection));
-        //     });
-        //    // console.log(imageSelections);
-        // });
-
     axios.get('https://dev-pb-apps.s3-eu-west-1.amazonaws.com/collection/CHhASmTpKjaHyAsSaauThRqMMjWanYkQ.json')
         .then(response => {
-            // const imageResponse = JSON.parse(response);
-            // console.log(response.data);
             if (response.status === 200) {
                 const imageList = response.data.entries;
                 res.json(imageList);
@@ -80,21 +57,14 @@ app.post('/save-images', async (req, res) => {
     console.log(req.body);
     const postData = req.body;
 
-     const user = new UserImages( postData);
-     await user.save().then(() => console.log('User created'))
+     const userImages = new UserImages( postData);
+     await userImages.save().then(() => console.log('UserImages created'))
          .catch((err)=> console.log(err));
 
     res.sendStatus(200);
 
 });
 
-app.get('/user-create', async (req, res) => {
-  // const user = new User({ username: 'userTest' });
-  //
-  // await user.save().then(() => console.log('User created'));
-
-  res.send('User created \n');
-});
 
 app.listen(PORT, function() {
   console.log(`Listening on ${PORT}`);
