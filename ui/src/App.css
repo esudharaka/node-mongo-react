@@ -1,0 +1,103 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selectedImages {
+  width: 100%;
+}
+
+.selectedImages .selectedContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.selectedImages .selectedContainer {
+  flex: 0 32%;
+  height: 100%;
+  margin-bottom: 2%; /* (100-32*3)/2 */
+}
+
+.selectedImages .selectedContainer .selectedImg {
+   display: flex;
+   /*height: 100px;*/
+   /*margin-bottom: 2%; !* (100-32*3)/2 *!*/
+ }
+
+.selectedImages .selectedContainer img {
+  border: 4px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+.allImages {
+  width: 100%;
+  border-style: inset;
+}
+
+.allImages .allImageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.allImages .allImageContainer .item {
+  flex: 0 20%;
+  height: 100%;
+  margin-bottom: 2%; /* (100-32*3)/2 */
+  border-style: dotted;
+}
+
+
+.allImages .allImageContainer .item img {
+  border: 4px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+/*border: 1px solid #ddd;*/
+/*border-radius: 4px;*/
+/*padding: 5px;*/
+/*width: 150px;*/
